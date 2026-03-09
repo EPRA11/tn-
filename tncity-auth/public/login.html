@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TN CITY ROLEPLAY — تسجيل الدخول</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Orbitron:wght@700;900&display=swap" rel="stylesheet">
+<style>
+* { margin:0; padding:0; box-sizing:border-box; }
+body {
+  font-family: 'Poppins', sans-serif;
+  background: #050505;
+  color: #e8d5ff;
+  min-height: 100vh;
+  display: flex; align-items: center; justify-content: center;
+  overflow: hidden;
+}
+body::before {
+  content:'';
+  position:fixed; inset:0;
+  background:
+    radial-gradient(ellipse 70% 60% at 20% 20%, rgba(176,38,255,0.15) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 70% at 80% 80%, rgba(75,0,130,0.2) 0%, transparent 60%);
+  pointer-events:none;
+}
+body::after {
+  content:'';
+  position:fixed; inset:0;
+  background: repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(0,0,0,0.06) 2px, rgba(0,0,0,0.06) 4px);
+  pointer-events:none;
+}
+.card {
+  background: rgba(75,0,130,0.12);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(176,38,255,0.3);
+  border-radius: 20px;
+  padding: 50px 40px;
+  width: 100%;
+  max-width: 440px;
+  text-align: center;
+  position: relative;
+  z-index:2;
+  box-shadow: 0 0 60px rgba(176,38,255,0.15);
+}
+.card::before {
+  content:'';
+  position:absolute; top:0; left:0; right:0; height:1px;
+  background: linear-gradient(90deg, transparent, rgba(176,38,255,0.8), transparent);
+}
+.logo {
+  width: 100px; height: 100px;
+  border-radius: 50%;
+  border: 2px solid rgba(176,38,255,0.6);
+  box-shadow: 0 0 30px rgba(176,38,255,0.5);
+  margin: 0 auto 24px;
+  animation: pulse 3s ease-in-out infinite;
+}
+@keyframes pulse {
+  0%,100% { box-shadow: 0 0 30px rgba(176,38,255,0.5); }
+  50%      { box-shadow: 0 0 50px rgba(176,38,255,0.9); }
+}
+h1 {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 22px;
+  font-weight: 900;
+  color: #fff;
+  letter-spacing: 4px;
+  margin-bottom: 6px;
+}
+.subtitle {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 11px;
+  color: #b026ff;
+  letter-spacing: 6px;
+  margin-bottom: 32px;
+}
+.divider {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(176,38,255,0.4), transparent);
+  margin: 28px 0;
+}
+p {
+  font-size: 14px;
+  color: #a08abf;
+  line-height: 1.7;
+  margin-bottom: 28px;
+}
+.btn-discord {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  width: 100%;
+  background: linear-gradient(135deg, #5865F2, #4752c4);
+  color: white;
+  text-decoration: none;
+  padding: 16px 28px;
+  border-radius: 12px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  font-size: 15px;
+  transition: all 0.3s;
+  box-shadow: 0 0 25px rgba(88,101,242,0.4);
+  letter-spacing: 0.5px;
+}
+.btn-discord:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 30px rgba(88,101,242,0.6);
+}
+.btn-discord svg { flex-shrink:0; }
+
+/* Error banner */
+.error-box {
+  background: rgba(255,50,50,0.1);
+  border: 1px solid rgba(255,50,50,0.3);
+  border-radius: 10px;
+  padding: 12px 16px;
+  font-size: 13px;
+  color: #ff8888;
+  margin-bottom: 20px;
+  display: none;
+}
+
+.features {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-bottom: 28px;
+}
+.feature {
+  background: rgba(176,38,255,0.07);
+  border: 1px solid rgba(176,38,255,0.15);
+  border-radius: 10px;
+  padding: 12px;
+  font-size: 12px;
+  color: #c4a8e0;
+}
+.feature .fi { font-size: 20px; margin-bottom:6px; display:block; }
+
+.back-link {
+  display: inline-block;
+  margin-top: 20px;
+  font-size: 13px;
+  color: #7a5a99;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.back-link:hover { color: #b026ff; }
+</style>
+</head>
+<body>
+
+<div class="card">
+
+  <!-- Logo -->
+  <img src="/logo.webp" class="logo" alt="TN CITY" onerror="this.style.display='none'">
+
+  <h1>TN CITY RP</h1>
+  <p class="subtitle">CFW EDITION</p>
+
+  <!-- Error -->
+  <div class="error-box" id="error-box"></div>
+
+  <p>سجّل دخولك عبر حساب Discord للوصول لجميع مميزات الموقع ومتابعة طلباتك.</p>
+
+  <!-- Features -->
+  <div class="features">
+    <div class="feature"><span class="fi">👤</span>ملف شخصي</div>
+    <div class="feature"><span class="fi">🎫</span>تتبع الطلبات</div>
+    <div class="feature"><span class="fi">🔔</span>الإشعارات</div>
+    <div class="feature"><span class="fi">💎</span>المتجر VIP</div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- Login Button -->
+  <a href="/auth/discord" class="btn-discord">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="white">
+      <path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057c.003.018.01.034.021.044a19.91 19.91 0 0 0 5.993 3.03.077.077 0 0 0 .084-.028 14.09 14.09 0 0 0 1.226-1.994.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03z"/>
+    </svg>
+    تسجيل الدخول عبر Discord
+  </a>
+
+  <a href="/" class="back-link">← العودة للموقع الرئيسي</a>
+
+</div>
+
+<script>
+// عرض رسالة الخطأ لو موجودة في الـ URL
+const params = new URLSearchParams(window.location.search);
+const err = params.get('error');
+if (err) {
+  const box = document.getElementById('error-box');
+  const msgs = {
+    'denied':      '❌ تم رفض تسجيل الدخول من Discord.',
+    'no_code':     '❌ لم يتم استلام رمز التفويض.',
+    'auth_failed': '❌ فشل تسجيل الدخول — حاول مجدداً.',
+  };
+  box.textContent = msgs[err] || '❌ حدث خطأ غير متوقع.';
+  box.style.display = 'block';
+}
+
+// لو مسجل دخول أصلاً روّح للداشبورد
+fetch('/api/me')
+  .then(r => r.json())
+  .then(u => { if (u.id) window.location.href = '/dashboard'; })
+  .catch(() => {});
+</script>
+</body>
+</html>
