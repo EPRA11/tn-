@@ -1,0 +1,29 @@
+# TN CITY ROLEPLAY — Netlify Deploy
+
+## خطوات الرفع على Netlify
+
+### 1. Environment Variables
+في Netlify → Site Settings → Environment Variables أضف:
+```
+DISCORD_CLIENT_ID     = 1480416371614552145
+DISCORD_CLIENT_SECRET = الـ_secret_الجديد
+DISCORD_REDIRECT_URI  = https://tn-test.netlify.app/auth/callback
+DISCORD_GUILD_ID      = ID_سيرفرك
+```
+
+### 2. هيكل الملفات
+```
+/
+├── index.html              ← الموقع الرئيسي
+├── dashboard.html          ← لوحة التحكم
+├── logo.webp               ← الشعار
+├── netlify.toml            ← إعدادات Netlify
+└── netlify/functions/
+    ├── auth-discord.js     ← بدء تسجيل الدخول
+    ├── auth-callback.js    ← callback من Discord
+    ├── api-me.js           ← بيانات المستخدم
+    └── auth-logout.js      ← تسجيل الخروج
+```
+
+### 3. Discord Developer Portal
+Redirects → أضف: `https://tn-test.netlify.app/auth/callback`
